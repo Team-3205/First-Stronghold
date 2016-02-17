@@ -24,7 +24,7 @@ public class portcullisRaise extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-      	if(Robot.arm.isLowerLimitSet()){
+      	if(Robot.arm.isUpperLimitSet()){
     		Robot.arm.stopMoving();
     	}
     }
@@ -32,7 +32,8 @@ public class portcullisRaise extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() { 
         //return Robot.arm.getEncoder() - initCount == RobotMap.PORTCULLIS_POS;
-        return Robot.arm.getEncoder() == RobotMap.PORTCULLIS_POS;
+        //return Robot.arm.getEncoder() == RobotMap.PORTCULLIS_POS;
+    	return false;
     }
 
     // Called once after isFinished returns true

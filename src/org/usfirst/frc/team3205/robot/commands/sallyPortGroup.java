@@ -25,7 +25,7 @@ public class sallyPortGroup extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	//make it move to past the sally port?
-    	//addSequential(new sallyPortUpper());
+    	addSequential(new sallyPortUpper());
     	addSequential(new sallyPortLower());
     	addSequential(new sallyPortDriveBack());
     	addSequential(new drivePastStuff());

@@ -1,8 +1,6 @@
 package org.usfirst.frc.team3205.robot.subsystems;
 
 import org.usfirst.frc.team3205.robot.RobotMap;
-import org.usfirst.frc.team3205.robot.commands.armStart;
-
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -32,7 +30,7 @@ public class Arm extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-    	//setDefaultCommand(new armStart());
+    	//setDefaultCommand(new armDown());
     }
     
     public boolean isUpperLimitSet(){

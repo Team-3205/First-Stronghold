@@ -87,6 +87,10 @@ public class DriveTrain extends Subsystem {
     	robotDrive.tankDrive(-1.0, -1.0);
     }
     
+    public void driveSpeed(double firstSpeed, double secondSpeed){
+    	robotDrive.tankDrive(firstSpeed, secondSpeed);
+    }
+    
     public void updateSmartDashboard(){
     	SmartDashboard.putNumber("Drive Encoder One", getEncoderOne());
     	SmartDashboard.putNumber("Drive Encoder Two", getEncoderTwo());

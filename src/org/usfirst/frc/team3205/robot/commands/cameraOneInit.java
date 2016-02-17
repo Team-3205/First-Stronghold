@@ -38,6 +38,7 @@ public class cameraOneInit extends Command {
 //    	if(RobotMap.cameraToggle){
         	NIVision.IMAQdxStartAcquisition(cameraOne);
         	NIVision.IMAQdxGrab(cameraOne, frame, 1);
+        	//CameraServer.getInstance().setQuality(50);
         	CameraServer.getInstance().setImage(frame);
 //    	}
 //    	else{

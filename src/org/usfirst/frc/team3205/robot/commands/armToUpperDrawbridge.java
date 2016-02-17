@@ -33,7 +33,7 @@ public class armToUpperDrawbridge extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	return false;
-    			//RobotMap.ARM_DRAWBRIDGE_UPPER_POSITION == Robot.arm.getEncoder();
+    	//return RobotMap.ARM_DRAWBRIDGE_UPPER_POSITION == Robot.arm.getEncoder();
     	//return Robot.arm.getEncoder() - initCount == RobotMap.ARM_DRAWBRIDGE_UPPER_POSITION;
     }
 

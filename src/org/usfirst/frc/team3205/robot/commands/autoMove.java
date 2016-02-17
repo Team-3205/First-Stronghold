@@ -29,12 +29,7 @@ public class autoMove extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if(Robot.drivetrain.getEncoderOne()-initCount == RobotMap.AUTO_DISTANCE_TO_OBSTACLES){
-    		return true;
-    	}
-    	else{
-    		return false;
-    	}
+    	return Robot.drivetrain.getEncoderOne() - initCount == RobotMap.AUTO_DISTANCE_TO_OBSTACLES;
     }
 
     // Called once after isFinished returns true

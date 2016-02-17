@@ -23,7 +23,6 @@ public class RobotMap {
 	public static final double DRAWBRIDGE_SPEED = 1.0; 
 	
 	//Arm Positions
-	public static final int ARM_MIDDLE_POSITION = 0; 
 	public static final int ARM_DRAWBRIDGE_UPPER_POSITION = 0;
 //	public static final int ARM_SALLY_PORT_POSITION = 0;
 	public static final int ARM_DRAWBRIDGE_LOWER_POSITION = 0;
@@ -54,6 +53,7 @@ public class RobotMap {
 	//SENSORS
 	public static final int SHOOTER_UPPER_LIMIT = 8;
 	public static final int SHOOTER_LOWER_LIMIT = 1;
+	public static final int INTAKE_LIMIT = 10;
 	public static final int DRAWBRIDGE_UPPER_LIMIT = 2;
 	public static final int DRAWBRIDGE_LOWER_LIMIT = 9;
 	public static final int ARM_UPPER_LIMIT = 6;
@@ -61,13 +61,6 @@ public class RobotMap {
 	
 	// vars 
 	public static boolean driveToggle = true; 
-	
-	// Camera toggles: if true switch cameras 
-	public static boolean cameraToggle = false; // if true, activate cam 2 
-	public static boolean camOneStopToggle = true; 
-	public static boolean camTwoStopToggle = false; 
-	public static boolean camOneInit = false;
-	public static boolean camTwoInit = false;
 	public static boolean camOneStart = true;
 	public static boolean camTwoStart = true;
 }

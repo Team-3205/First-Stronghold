@@ -20,12 +20,14 @@ public class Shooter extends Subsystem {
 	private SpeedController shooterMove;
 	private DigitalInput shooterUpperLimit;
 	private DigitalInput shooterLowerLimit;
+	private DigitalInput intakeLimit;
 
 	public Shooter(){
 		shooterShoot = new Talon(RobotMap.SHOOTER_SHOOTY);
 		shooterMove = new Talon(RobotMap.SHOOTER_MOVEY);
 		shooterUpperLimit = new DigitalInput(RobotMap.SHOOTER_UPPER_LIMIT);
 		shooterLowerLimit = new DigitalInput(RobotMap.SHOOTER_LOWER_LIMIT);
+		intakeLimit = new DigitalInput(RobotMap.INTAKE_LIMIT);
 	}
 	
     public void initDefaultCommand() {
@@ -65,9 +67,14 @@ public class Shooter extends Subsystem {
     	return shooterLowerLimit.get();
     }
     
+    public boolean isIntakeSet(){
+    	return intakeLimit.get();
+    }
+    
     public void updateDashboard(){
     	SmartDashboard.putBoolean("Shooter Upper Limit", isUpperLimitSet());
     	SmartDashboard.putBoolean("Shooter Lower Limit", isLowerLimitSet());
+    	SmartDashboard.putBoolean("Intake Limit", isIntakeSet());
     }
 }
 

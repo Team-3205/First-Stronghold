@@ -34,8 +34,8 @@ public class sallyPortUpper extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	//return Robot.arm.getEncoder() - initCount == RobotMap.TALL_SALLY;
-    	return false; 
-    			//Robot.arm.getEncoder() == RobotMap.TALL_SALLY;
+//    	return false; 
+    	return Robot.arm.getEncoder() == RobotMap.TALL_SALLY;
     	
     }
 

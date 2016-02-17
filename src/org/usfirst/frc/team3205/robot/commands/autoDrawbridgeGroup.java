@@ -28,6 +28,7 @@ public class autoDrawbridgeGroup extends CommandGroup {
     	addParallel(new armToUpperDrawbridge());
     	addParallel(new drawbridgeExtend());
     	addSequential(new autoDrawbridgeDriveBack());  
+    	addParallel(new armToLowerDrawbridge());
     	addSequential(new drawbridgeRetract()); 
     	addSequential(new drivePastStuff());
     }

@@ -116,7 +116,7 @@ public class OI {
 	
 	public OI(){
 		c1.whenPressed(new drawbridgeGroup());
-		c2.whenPressed(new sallyPortGroup());
+		c2.whenPressed(new sallyPortGroup()); 		//is this even going on the robot??
 		c3.whileHeld(new shoot());
 		c4.whileHeld(new intake());
 		c5.whileHeld(new shooterUp());
@@ -126,12 +126,8 @@ public class OI {
 		c10.whenPressed(new portcullisGroup());
 		c11.toggleWhenPressed(new cameraOneInit());
 		c12.toggleWhenPressed(new cameraTwoInit());
-	
-		//r1.toggleWhenActive(new driveBack());
+		
 		r1.whenPressed(new ONLYFORONEBOOLEAN());
-		//r1.whenPressed(new camera)
-		
-		
 	}
 }
 

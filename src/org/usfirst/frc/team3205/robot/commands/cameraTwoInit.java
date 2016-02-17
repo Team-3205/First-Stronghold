@@ -37,6 +37,7 @@ public class cameraTwoInit extends Command {
     protected void execute() {
     	NIVision.IMAQdxStartAcquisition(cameraTwo);
     	NIVision.IMAQdxGrab(cameraTwo, frame, 1);
+    	//CameraServer.getInstance().setQuality(50);
     	CameraServer.getInstance().setImage(frame);
     }
 
