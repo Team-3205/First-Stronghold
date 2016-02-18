@@ -40,24 +40,24 @@ public class RobotMap {
 	public static final int PORTCULLIS_DISTANCE = 0; 
 	
 	//MOTORS
-	public static final int DRIVE_TOP_LEFT = 4;				
-	public static final int DRIVE_BOTTOM_LEFT = 5;
-	public static final int DRIVE_TOP_RIGHT = 1;
-	public static final int DRIVE_BOTTOM_RIGHT = 3;
-	public static final int DRAWBRIDGE_MOTOR = 0;
-	public static final int SHOOTER_SHOOTY = 2;
-	public static final int SHOOTER_MOVEY = 6;
-	public static final int ARM_MOTOR = 7;
+	public static final int DRIVE_TOP_LEFT = 2;				
+	public static final int DRIVE_BOTTOM_LEFT = 3;
+	public static final int DRIVE_TOP_RIGHT = 0;
+	public static final int DRIVE_BOTTOM_RIGHT = 1;
+	public static final int DRAWBRIDGE_MOTOR = 5;
+	public static final int SHOOTER_SHOOTY = 4;
+	public static final int SHOOTER_MOVEY = 7;
+	public static final int ARM_MOTOR = 6;
 	
 	
 	//SENSORS
-	public static final int SHOOTER_UPPER_LIMIT = 8;
-	public static final int SHOOTER_LOWER_LIMIT = 1;
-	public static final int INTAKE_LIMIT = 10;
+	public static final int SHOOTER_UPPER_LIMIT = 4;
+	public static final int SHOOTER_LOWER_LIMIT = 5;
+	public static final int INTAKE_LIMIT = 6;
 	public static final int DRAWBRIDGE_UPPER_LIMIT = 2;
-	public static final int DRAWBRIDGE_LOWER_LIMIT = 9;
-	public static final int ARM_UPPER_LIMIT = 6;
-	public static final int ARM_LOWER_LIMIT = 7;
+	public static final int DRAWBRIDGE_LOWER_LIMIT = 3;
+	public static final int ARM_UPPER_LIMIT = 1;
+	public static final int ARM_LOWER_LIMIT = 0;
 	
 	// vars 
 	public static boolean driveToggle = true; 

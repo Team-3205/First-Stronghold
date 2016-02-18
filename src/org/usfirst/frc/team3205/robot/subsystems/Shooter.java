@@ -59,6 +59,8 @@ public class Shooter extends Subsystem {
     	shooterMove.set(0.0);
     }
     
+    
+    
     public boolean isUpperLimitSet(){
     	return shooterUpperLimit.get();
     }

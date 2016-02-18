@@ -4,6 +4,7 @@ import org.usfirst.frc.team3205.robot.Robot;
 import org.usfirst.frc.team3205.robot.RobotMap;
 
 import com.ni.vision.NIVision;
+import com.ni.vision.NIVision.FlipAxis;
 import com.ni.vision.NIVision.Image;
 
 import edu.wpi.first.wpilibj.CameraServer;
@@ -23,6 +24,7 @@ public class cameraOneInit extends Command {
     }
 
     // Called just before this Command runs the first time
+    //UPSIDE DOWN
     protected void initialize() {
 //    	RobotMap.camOneInit = false;
 //    	RobotMap.camTwoInit = true;
@@ -38,6 +40,7 @@ public class cameraOneInit extends Command {
 //    	if(RobotMap.cameraToggle){
         	NIVision.IMAQdxStartAcquisition(cameraOne);
         	NIVision.IMAQdxGrab(cameraOne, frame, 1);
+        	NIVision.imaqFlip(frame, frame, FlipAxis.HORIZONTAL_AXIS);
         	//CameraServer.getInstance().setQuality(50);
         	CameraServer.getInstance().setImage(frame);
 //    	}

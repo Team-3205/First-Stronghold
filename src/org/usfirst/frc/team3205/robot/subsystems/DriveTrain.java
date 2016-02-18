@@ -33,7 +33,7 @@ public class DriveTrain extends Subsystem {
 		driveBottomRight = new Talon(RobotMap.DRIVE_BOTTOM_RIGHT);
 		one = new Encoder(12,13, false, Encoder.EncodingType.k4X);
 		two = new Encoder(14,15, false, Encoder.EncodingType.k4X);
-		robotDrive = new RobotDrive(driveTopLeft, driveTopRight, driveBottomLeft, driveBottomRight);
+		robotDrive = new RobotDrive(driveTopLeft, driveBottomLeft, driveTopRight, driveBottomRight);
 		//robotDrive = new RobotDrive(RobotMap.DRIVE_TOP_LEFT, RobotMap.DRIVE_BOTTOM_LEFT, RobotMap.DRIVE_TOP_RIGHT, RobotMap.DRIVE_BOTTOM_RIGHT);
 		robotDrive.setSafetyEnabled(false);
 	}
@@ -45,18 +45,18 @@ public class DriveTrain extends Subsystem {
     }
     
     public void driveNow(Joystick left, Joystick right){
-    	driveTopLeft.setInverted(false);
-    	driveBottomLeft.setInverted(false);
-    	driveTopRight.setInverted(false);
-    	driveBottomRight.setInverted(false);
-    	robotDrive.tankDrive(left, right);
-    }
-    
-    public void backwards(Joystick left, Joystick right){
     	driveTopLeft.setInverted(true);
     	driveBottomLeft.setInverted(true);
     	driveTopRight.setInverted(true);
     	driveBottomRight.setInverted(true);
+    	robotDrive.tankDrive(left, right);
+    }
+    
+    public void backwards(Joystick left, Joystick right){
+    	driveTopLeft.setInverted(false);
+    	driveBottomLeft.setInverted(false);
+    	driveTopRight.setInverted(false);
+    	driveBottomRight.setInverted(false);
     	robotDrive.tankDrive(left, right);
     }
     public void stop(){
