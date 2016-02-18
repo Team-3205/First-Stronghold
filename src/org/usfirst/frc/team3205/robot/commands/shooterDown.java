@@ -29,7 +29,8 @@ public class shooterDown extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return Robot.shootey.isLowerLimitSet();
+    	//return Robot.shootey.isLowerLimitSet();
+    	return false;
     }
 
     // Called once after isFinished returns true
