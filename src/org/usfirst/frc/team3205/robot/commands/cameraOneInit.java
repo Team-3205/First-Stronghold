@@ -20,7 +20,7 @@ public class cameraOneInit extends Command {
     public cameraOneInit() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.vision);
+    	//requires(Robot.vision);
     }
 
     // Called just before this Command runs the first time
@@ -55,7 +55,6 @@ public class cameraOneInit extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        //return RobotMap.camOneInit;
         return false;
     }
 

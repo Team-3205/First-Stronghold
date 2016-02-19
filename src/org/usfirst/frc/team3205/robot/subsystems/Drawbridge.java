@@ -26,7 +26,7 @@ public class Drawbridge extends Subsystem {
 		drawbridgeMotor = new Talon(RobotMap.DRAWBRIDGE_MOTOR);
 		drawbridgeUpperLimit = new DigitalInput(RobotMap.DRAWBRIDGE_UPPER_LIMIT);
 		drawbridgeLowerLimit = new DigitalInput(RobotMap.DRAWBRIDGE_LOWER_LIMIT);
-		//dbEncoder = new Encoder(16,17, false, Encoder.EncodingType.k4X);
+		dbEncoder = new Encoder(22,23, false, Encoder.EncodingType.k4X); // might change to k1 - weird?? 
 	}
 	
     public void initDefaultCommand() {
@@ -34,13 +34,13 @@ public class Drawbridge extends Subsystem {
        // setDefaultCommand(new drawbridgeRetract());
     }
     
-//    public void reset(){
-//    	dbEncoder.reset();
-//    }
-//    
-//    public int get(){
-//    	return dbEncoder.getRaw();
-//    }
+    public void reset(){
+    	dbEncoder.reset();
+    }
+    
+    public int get(){
+    	return dbEncoder.getRaw();
+    }
     
     public boolean isUpperLimitSet() {
     	return drawbridgeUpperLimit.get();
@@ -65,6 +65,7 @@ public class Drawbridge extends Subsystem {
     public void updateDashboard() {
     	SmartDashboard.putBoolean("Drawbridge Upper Limit", isUpperLimitSet());
     	SmartDashboard.putBoolean("Drawbridge Lower Limit", isLowerLimitSet());
+    	SmartDashboard.putNumber("Drabridge Encoder", get());
     }
 }
 

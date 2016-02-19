@@ -25,12 +25,11 @@ public class toggleDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	
     	if(RobotMap.driveToggle){
     		Robot.drivetrain.driveNow(OI.left, OI.right); 
     	}
     	else{
-    		Robot.drivetrain.backwards(OI.left, OI.right); 
+    		Robot.drivetrain.backwards(OI.right, OI.left); 
     		
     	}
     }

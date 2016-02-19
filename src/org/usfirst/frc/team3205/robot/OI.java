@@ -115,10 +115,10 @@ public class OI {
 			
 	
 	public OI(){
-		//1.whenPressed(new drawbridgeGroup());
+		//c1.whenPressed(new drawbridgeGroup());
 		//c2.whenPressed(new sallyPortGroup()); 		//is this even going on the robot??
-//		c1.whileHeld(new drawbridgeExtend());
-//		c2.whileHeld(new drawbridgeRetract());
+		c1.whileHeld(new drawbridgeExtend());
+		c2.whileHeld(new drawbridgeRetract());
 		c3.whileHeld(new shoot());
 		c4.whileHeld(new intake());
 		c5.whileHeld(new shooterUp());

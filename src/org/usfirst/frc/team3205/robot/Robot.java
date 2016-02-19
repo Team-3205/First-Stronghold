@@ -20,7 +20,7 @@ import org.usfirst.frc.team3205.robot.subsystems.Arm;
 import org.usfirst.frc.team3205.robot.subsystems.Drawbridge;
 import org.usfirst.frc.team3205.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team3205.robot.subsystems.Shooter;
-import org.usfirst.frc.team3205.robot.subsystems.Vision;
+//import org.usfirst.frc.team3205.robot.subsystems.Vision;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -42,7 +42,7 @@ public class Robot extends IterativeRobot {
 	public static final Shooter shootey = new Shooter();
 	public static final Arm arm = new Arm();
 	public static final Drawbridge drawbridge = new Drawbridge();
-	public static final Vision vision = new Vision();
+	//public static final Vision vision = new Vision();
 
     /**
      * This function is run when the robot is first started up and should be

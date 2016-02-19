@@ -45,7 +45,7 @@ public class RobotMap {
 	public static final int DRIVE_TOP_RIGHT = 0;
 	public static final int DRIVE_BOTTOM_RIGHT = 1;
 	public static final int DRAWBRIDGE_MOTOR = 5;
-	public static final int SHOOTER_SHOOTY = 4;
+	public static final int BAM_BAM = 4;
 	public static final int SHOOTER_MOVEY = 7;
 	public static final int ARM_MOTOR = 6;
 	
@@ -63,4 +63,5 @@ public class RobotMap {
 	public static boolean driveToggle = true; 
 	public static boolean camOneStart = true;
 	public static boolean camTwoStart = true;
+	public static final int WAIT_TIME = 250;
 }

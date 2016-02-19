@@ -4,6 +4,7 @@ import org.usfirst.frc.team3205.robot.RobotMap;
 import org.usfirst.frc.team3205.robot.commands.shooterStart;
 
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,13 +22,15 @@ public class Shooter extends Subsystem {
 	private DigitalInput shooterUpperLimit;
 	private DigitalInput shooterLowerLimit;
 	private DigitalInput intakeLimit;
+	Encoder moveEncoder;
 
 	public Shooter(){
-		shooterShoot = new Talon(RobotMap.SHOOTER_SHOOTY);
+		shooterShoot = new Talon(RobotMap.BAM_BAM);
 		shooterMove = new Talon(RobotMap.SHOOTER_MOVEY);
 		shooterUpperLimit = new DigitalInput(RobotMap.SHOOTER_UPPER_LIMIT);
 		shooterLowerLimit = new DigitalInput(RobotMap.SHOOTER_LOWER_LIMIT);
 		intakeLimit = new DigitalInput(RobotMap.INTAKE_LIMIT);
+		//moveEncoder = new Encoder(24,25, false, Encoder.EncodingType.k4X);
 	}
 	
     public void initDefaultCommand() {
@@ -35,6 +38,14 @@ public class Shooter extends Subsystem {
         setDefaultCommand(new shooterStart());
     }
     
+//    public void resetEnc(){
+//    	moveEncoder.reset();
+//    }
+//    
+//    public int getEncoder(){
+//    	return moveEncoder.getRaw();
+//    }
+//    
     public void shoot(){
     	shooterShoot.set(RobotMap.SHOOTER_SPEED);
     }
@@ -77,6 +88,7 @@ public class Shooter extends Subsystem {
     	SmartDashboard.putBoolean("Shooter Upper Limit", isUpperLimitSet());
     	SmartDashboard.putBoolean("Shooter Lower Limit", isLowerLimitSet());
     	SmartDashboard.putBoolean("Intake Limit", isIntakeSet());
+    	//SmartDashboard.putNumber("Shooter Move Encoder", getEncoder());
     }
 }
 

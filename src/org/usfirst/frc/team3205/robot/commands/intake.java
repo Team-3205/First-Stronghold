@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3205.robot.commands;
 
 import org.usfirst.frc.team3205.robot.Robot;
+import org.usfirst.frc.team3205.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -25,7 +26,7 @@ public class intake extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	try{
-    		Thread.sleep(1000);
+    		Thread.sleep(RobotMap.WAIT_TIME);
     		if(Robot.shootey.isIntakeSet()) Robot.shootey.stopShooting();
     			
     	} catch(Exception e){}
