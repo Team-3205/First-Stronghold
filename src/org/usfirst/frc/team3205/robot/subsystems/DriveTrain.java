@@ -31,8 +31,8 @@ public class DriveTrain extends Subsystem {
 		driveBottomLeft = new Talon(RobotMap.DRIVE_BOTTOM_LEFT);
 		driveTopRight = new Talon(RobotMap.DRIVE_TOP_RIGHT);
 		driveBottomRight = new Talon(RobotMap.DRIVE_BOTTOM_RIGHT);
-		one = new Encoder(18,19, false, Encoder.EncodingType.k4X);
-		two = new Encoder(20,21, false, Encoder.EncodingType.k4X);
+		one = new Encoder(0,1, false, Encoder.EncodingType.k4X);
+		two = new Encoder(2,3, false, Encoder.EncodingType.k4X);
 		robotDrive = new RobotDrive(driveTopLeft, driveBottomLeft, driveTopRight, driveBottomRight);
 		//robotDrive = new RobotDrive(RobotMap.DRIVE_TOP_LEFT, RobotMap.DRIVE_BOTTOM_LEFT, RobotMap.DRIVE_TOP_RIGHT, RobotMap.DRIVE_BOTTOM_RIGHT);
 		robotDrive.setSafetyEnabled(false);
@@ -80,7 +80,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public void driveSequential(){
-    	robotDrive.tankDrive(1.0, 1.0); 
+    	robotDrive.tankDrive(0.75, 0.75); 
     }
     
     public void driveBack(){

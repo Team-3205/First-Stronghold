@@ -30,7 +30,7 @@ public class Shooter extends Subsystem {
 		shooterUpperLimit = new DigitalInput(RobotMap.SHOOTER_UPPER_LIMIT);
 		shooterLowerLimit = new DigitalInput(RobotMap.SHOOTER_LOWER_LIMIT);
 		intakeLimit = new DigitalInput(RobotMap.INTAKE_LIMIT);
-		//moveEncoder = new Encoder(24,25, false, Encoder.EncodingType.k4X);
+		moveEncoder = new Encoder(6,7, false, Encoder.EncodingType.k4X);
 	}
 	
     public void initDefaultCommand() {
@@ -38,20 +38,20 @@ public class Shooter extends Subsystem {
         setDefaultCommand(new shooterStart());
     }
     
-//    public void resetEnc(){
-//    	moveEncoder.reset();
-//    }
-//    
-//    public int getEncoder(){
-//    	return moveEncoder.getRaw();
-//    }
-//    
+    public void resetEnc(){
+    	moveEncoder.reset();
+    }
+    
+    public int getEncoder(){
+    	return moveEncoder.getRaw();
+    }
+    
     public void shoot(){
-    	shooterShoot.set(RobotMap.SHOOTER_SPEED);
+    	shooterShoot.set(RobotMap.SPIT_SPEED);
     }
     
     public void intake(){
-    	shooterShoot.set(-RobotMap.SHOOTER_SPEED);
+    	shooterShoot.set(-RobotMap.INTAKE_SPEED);
     }
     
     public void stopShooting(){
@@ -59,11 +59,11 @@ public class Shooter extends Subsystem {
     }
     
     public void moveUp(){
-    	shooterMove.set(RobotMap.SHOOTER_MOVE_SPEED);
+    	shooterMove.set(RobotMap.SHOOTER_UP);
     }
     
     public void moveDown(){
-    	shooterMove.set(-RobotMap.SHOOTER_MOVE_SPEED);
+    	shooterMove.set(-RobotMap.SHOOTER_DOWN);
     }
     
     public void stopMoving(){
@@ -88,7 +88,7 @@ public class Shooter extends Subsystem {
     	SmartDashboard.putBoolean("Shooter Upper Limit", isUpperLimitSet());
     	SmartDashboard.putBoolean("Shooter Lower Limit", isLowerLimitSet());
     	SmartDashboard.putBoolean("Intake Limit", isIntakeSet());
-    	//SmartDashboard.putNumber("Shooter Move Encoder", getEncoder());
+    	SmartDashboard.putNumber("Shooter Move Encoder", getEncoder());
     }
 }
 

@@ -3,12 +3,14 @@ package org.usfirst.frc.team3205.robot;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick.RumbleType;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
+import org.usfirst.frc.team3205.robot.commands.armUp;
 import org.usfirst.frc.team3205.robot.commands.autoDrawbridgeGroup;
 import org.usfirst.frc.team3205.robot.commands.autoDriveOver;
 import org.usfirst.frc.team3205.robot.commands.autoPortcullisGroup;
@@ -16,11 +18,17 @@ import org.usfirst.frc.team3205.robot.commands.autoSallyPort;
 //import org.usfirst.frc.team3205.robot.commands.cameraOne;
 import org.usfirst.frc.team3205.robot.commands.resetArmEncoder;
 import org.usfirst.frc.team3205.robot.commands.resetDriveTrainEncoders;
+import org.usfirst.frc.team3205.robot.commands.shooterDown;
 import org.usfirst.frc.team3205.robot.subsystems.Arm;
 import org.usfirst.frc.team3205.robot.subsystems.Drawbridge;
 import org.usfirst.frc.team3205.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team3205.robot.subsystems.Shooter;
 //import org.usfirst.frc.team3205.robot.subsystems.Vision;
+
+
+
+
+import org.usfirst.frc.team3205.robot.subsystems.Vision;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -42,7 +50,7 @@ public class Robot extends IterativeRobot {
 	public static final Shooter shootey = new Shooter();
 	public static final Arm arm = new Arm();
 	public static final Drawbridge drawbridge = new Drawbridge();
-	//public static final Vision vision = new Vision();
+	public static final Vision vision = new Vision();
 
     /**
      * This function is run when the robot is first started up and should be
@@ -120,7 +128,27 @@ public class Robot extends IterativeRobot {
         // this line or comment it out.
     	updateSmartDashboard();
         if (autonomousCommand != null) autonomousCommand.cancel();
+//        if(OI.xbox.getRawAxis(3) < 0){
+//        	armUp downArm = new armUp();
+//        }
+//        else if(OI.xbox.getRawAxis(3) > 0){
+//        	shooterDown downShoot = new shooterDown();
+//        }
+        
+//        try{
+//	        if(shootey.isIntakeSet()){
+//	        	Robot.oi.xbox.setRumble(RumbleType.kLeftRumble,1);
+//	        	Robot.oi.xbox.setRumble(RumbleType.kRightRumble, 1);
+//	        	Thread.sleep(5000);
+//	        }
+//	        Robot.oi.xbox.setRumble(RumbleType.kLeftRumble, 0);
+//	        Robot.oi.xbox.setRumble(RumbleType.kRightRumble, 0);
+//        }
+//        catch(Exception e){
+//        	
+//        }
     }
+        
 
     /**
      * This function is called periodically during operator control

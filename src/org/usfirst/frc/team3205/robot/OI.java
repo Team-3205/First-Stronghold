@@ -112,15 +112,27 @@ public class OI {
 		Button c10 = new JoystickButton(controller, 10);
 		Button c11 = new JoystickButton(controller, 11);
 		Button c12 = new JoystickButton(controller, 12);
+		
+	public static Joystick xbox = new Joystick(2);
+		Button x1 = new JoystickButton(xbox, 1);
+		Button x2 = new JoystickButton(xbox, 2);
+		Button x3 = new JoystickButton(xbox, 3);
+		Button x4 = new JoystickButton(xbox, 4);
+		Button x5 = new JoystickButton(xbox, 5);
+		Button x6 = new JoystickButton(xbox, 6);
+		Button x7 = new JoystickButton(xbox, 7);
+		Button x8 = new JoystickButton(xbox, 8);
+		Button x9 = new JoystickButton(xbox, 9);
+		Button x10 = new JoystickButton(xbox, 10);
 			
 	
 	public OI(){
 		//c1.whenPressed(new drawbridgeGroup());
 		//c2.whenPressed(new sallyPortGroup()); 		//is this even going on the robot??
-		c1.whileHeld(new drawbridgeExtend());
-		c2.whileHeld(new drawbridgeRetract());
-		c3.whileHeld(new shoot());
-		c4.whileHeld(new intake());
+		c1.whileHeld(new shoot());
+		c2.whileHeld(new intake());
+		c4.whileHeld(new drawbridgeExtend());
+		c3.whileHeld(new drawbridgeRetract());
 		c5.whileHeld(new shooterUp());
 		c6.whileHeld(new armUp());
 		c7.whileHeld(new shooterDown());
@@ -130,6 +142,19 @@ public class OI {
 		c12.toggleWhenPressed(new cameraTwoInit());
 		
 		r1.whenPressed(new ONLYFORONEBOOLEAN());
+		l1.whenPressed(new ONLYFORONEBOOLEAN());
+		
+//		x1.whileHeld(new drawbridgeExtend());
+//		x3.whileHeld(new drawbridgeRetract());
+//		x2.whileHeld(new shoot());
+//		x4.whileHeld(new intake());
+//		x5.whileHeld(new shooterUp());
+//		x6.whileHeld(new armUp());
+//		//x7.whileHeld(new shooterDown());
+//		//x8.whileHeld(new armDown());
+//		x8.whenPressed(new portcullisGroup());
+//		x9.toggleWhenPressed(new cameraOneInit());
+//		x10.toggleWhenPressed(new cameraTwoInit());
 	}
 }
 

@@ -13,11 +13,14 @@ public class drawbridgeExtend extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.drawbridge);
+    	
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drawbridge.drawBridgeExtend();
+    	if(!Robot.arm.isLowerLimitSet()){
+    		Robot.drawbridge.drawBridgeExtend();
+    	}
     }
 
     // Called repeatedly when this Command is scheduled to run

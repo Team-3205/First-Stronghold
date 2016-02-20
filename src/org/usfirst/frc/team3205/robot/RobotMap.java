@@ -17,13 +17,17 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
 	
 	//Speeds
-	public static final double SHOOTER_MOVE_SPEED = 1.0;
-	public static final double SHOOTER_SPEED = 1.0;
-	public static final double ARM_SPEED = 1.0;
+	public static final double SHOOTER_UP = .75;
+	public static final double SHOOTER_DOWN = .4;
+	public static final double FLEX = 1.0;
+	public static final double ARM_DOWN = .5;
 	public static final double DRAWBRIDGE_SPEED = 1.0; 
+	public static final double INTAKE_SPEED = 0.5;
+	public static final double SPIT_SPEED = 1.0;
+
 	
 	//Arm Positions
-	public static final int ARM_DRAWBRIDGE_UPPER_POSITION = 0;
+	public static final int ARM_DRAWBRIDGE_UPPER_POSITION = 2100;
 //	public static final int ARM_SALLY_PORT_POSITION = 0;
 	public static final int ARM_DRAWBRIDGE_LOWER_POSITION = 0;
 	public static final int TALL_SALLY = 0; 
@@ -51,17 +55,18 @@ public class RobotMap {
 	
 	
 	//SENSORS
-	public static final int SHOOTER_UPPER_LIMIT = 4;
-	public static final int SHOOTER_LOWER_LIMIT = 5;
-	public static final int INTAKE_LIMIT = 6;
-	public static final int DRAWBRIDGE_UPPER_LIMIT = 2;
-	public static final int DRAWBRIDGE_LOWER_LIMIT = 3;
-	public static final int ARM_UPPER_LIMIT = 1;
-	public static final int ARM_LOWER_LIMIT = 0;
+	public static final int SHOOTER_UPPER_LIMIT = 18;
+	public static final int SHOOTER_LOWER_LIMIT = 19;
+	public static final int INTAKE_LIMIT = 9;
+	public static final int DRAWBRIDGE_UPPER_LIMIT = 14;
+	public static final int DRAWBRIDGE_LOWER_LIMIT = 16;
+	public static final int ARM_UPPER_LIMIT = 12;
+	public static final int ARM_LOWER_LIMIT = 10;
 	
 	// vars 
 	public static boolean driveToggle = true; 
 	public static boolean camOneStart = true;
 	public static boolean camTwoStart = true;
-	public static final int WAIT_TIME = 250;
+	public static boolean alwaysUp = false; //use only as a last resort
+	public static final int WAIT_TIME = 350;
 }

@@ -18,15 +18,13 @@ public class Arm extends Subsystem {
 	Encoder armEncoder;
 	private DigitalInput armUpperLimit;
 	private DigitalInput armLowerLimit;
-	private DigitalInput testLimit;
 	private SpeedController armMover;
 	
 	public Arm(){
-		armEncoder = new Encoder(16,17, false, Encoder.EncodingType.k4X);
+		armEncoder = new Encoder(4,5, false, Encoder.EncodingType.k4X);
 		armUpperLimit = new DigitalInput(RobotMap.ARM_UPPER_LIMIT);
 		armLowerLimit = new DigitalInput(RobotMap.ARM_LOWER_LIMIT);
 		armMover = new Talon(RobotMap.ARM_MOTOR);
-		testLimit = new DigitalInput(10);
 	}
 
     public void initDefaultCommand() {
@@ -44,15 +42,19 @@ public class Arm extends Subsystem {
     }
     
     public void moveUp(){
-    	armMover.set(RobotMap.ARM_SPEED);
+    	armMover.set(RobotMap.FLEX);
     }
     
     public void moveDown(){
-    	armMover.set(-RobotMap.ARM_SPEED);
+    	armMover.set(-RobotMap.ARM_DOWN);
     }
    
     public void stopMoving(){
     	armMover.set(0.0);
+    }
+    
+    public void moveUpSlow(){
+    	armMover.set(.25);
     }
     
     public void resetEncoder(){
@@ -63,15 +65,10 @@ public class Arm extends Subsystem {
     	return armEncoder.getRaw();
     }
     
-    public boolean isTestLimitSet(){
-    	return testLimit.get();
-    }
-    
     public void updateSmartDashboard(){
     	SmartDashboard.putNumber("Arm Encoder", getEncoder());
     	SmartDashboard.putBoolean("Arm Upper Limit", isUpperLimitSet());
     	SmartDashboard.putBoolean("Arm Lower Limit", isLowerLimitSet());
-    	SmartDashboard.putBoolean("Test Limit", isTestLimitSet());
     }
 }
 
