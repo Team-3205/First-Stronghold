@@ -165,9 +165,9 @@ public class Robot extends IterativeRobot {
 //    	if(arm.isLowerLimitSet() && !drawbridge.isLowerLimitSet()){
 //    		drawbridge.drawBridgeRetract();
 //    	}
-//    	if(arm.isPortcullisLimitSet() && !arm.isLowerLimitSet()){
-//        	arm.moveDown();
-//        }
+    	if(arm.isPortcullisLimitSet() && !arm.isLowerLimitSet()){
+        	arm.moveDown();
+        }
         updateSmartDashboard();
         Scheduler.getInstance().run();
     }

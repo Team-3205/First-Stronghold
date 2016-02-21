@@ -67,7 +67,7 @@ public class RobotMap {
 	public static final int DRAWBRIDGE_LOWER_LIMIT = 16;
 	public static final int ARM_UPPER_LIMIT = 12;
 	public static final int ARM_LOWER_LIMIT = 10;
-	public static final int ARM_PORTCULLIS_LIMIT = 20;
+	public static final int ARM_PORTCULLIS_LIMIT = 11;
 	
 	// vars 
 	public static boolean driveToggle = true; 
