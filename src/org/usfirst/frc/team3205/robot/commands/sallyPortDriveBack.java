@@ -20,7 +20,7 @@ public class sallyPortDriveBack extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drivetrain.driveBack();
+    	Robot.drivetrain.driveBackSlow();
     	initCount = Robot.drivetrain.getEncoderOne();
     }
 

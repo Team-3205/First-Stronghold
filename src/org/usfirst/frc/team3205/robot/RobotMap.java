@@ -34,7 +34,6 @@ public class RobotMap {
 	public static final int SHORT_SALLY = 0;
 	public static final int PORTCULLIS_POS = 0; 
 	
-	
 	//Distances
 	public static final int DISTANCE_PAST_OBSTACLE = 0;
 	public static final int DRAWBRIDGE_DISTANCE = 0;
@@ -42,6 +41,7 @@ public class RobotMap {
 	public static final int AUTO_DISTANCE_OVER_EVERYTHING = 0;
 	public static final int SALLYPORT_DISTANCE = 0; 
 	public static final int PORTCULLIS_DISTANCE = 0; 
+	public static final int DRAWBRAGE_AFTER_EXTEND = 0;
 	
 	//MOTORS
 	public static final int DRIVE_TOP_LEFT = 2;				
@@ -62,6 +62,7 @@ public class RobotMap {
 	public static final int DRAWBRIDGE_LOWER_LIMIT = 16;
 	public static final int ARM_UPPER_LIMIT = 12;
 	public static final int ARM_LOWER_LIMIT = 10;
+	public static final int ARM_PORTCULLIS_LIMIT = 20;
 	
 	// vars 
 	public static boolean driveToggle = true; 

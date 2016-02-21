@@ -8,42 +8,39 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class portcullisRaise extends Command {
-	private int initCount; 
-    public portcullisRaise() {
+public class autoDrawbridgeMove extends Command {
+	
+	private int initCount;
+
+    public autoDrawbridgeMove() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.arm); 
+    	requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.arm.moveUpSlow(); 
-    	//initCount = Robot.arm.getEncoder(); 
+    	Robot.drivetrain.driveSlow();
+    	initCount = Robot.drivetrain.getEncoderOne();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-      	if(Robot.arm.isUpperLimitSet()){
-    		Robot.arm.stopMoving();
-    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() { 
-        //return Robot.arm.getEncoder() - initCount == RobotMap.PORTCULLIS_POS;
-        //return Robot.arm.getEncoder() == RobotMap.PORTCULLIS_POS;
-    	return false;
+    protected boolean isFinished() {
+        return Robot.drivetrain.getEncoderOne() - initCount == RobotMap.DRAWBRAGE_AFTER_EXTEND;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.arm.stopMoving();
+    	Robot.drivetrain.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.arm.stopMoving();
+    	Robot.drivetrain.stop();
     }
 }

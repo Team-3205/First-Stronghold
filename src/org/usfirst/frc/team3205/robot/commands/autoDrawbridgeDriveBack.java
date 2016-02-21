@@ -13,14 +13,14 @@ public class autoDrawbridgeDriveBack extends Command {
 	private int initCount;
 
     public autoDrawbridgeDriveBack() {
-        // Use requires() here to declare subsystem dependencies
+        // Use requires()s here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drivetrain.driveBack();
+    	Robot.drivetrain.driveBackSlow();
     	initCount = Robot.drivetrain.getEncoderOne();
     }
 
@@ -30,12 +30,7 @@ public class autoDrawbridgeDriveBack extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if(Robot.drivetrain.getEncoderOne()-initCount == RobotMap.DRAWBRIDGE_DISTANCE){
-    		return true;
-    	}
-    	else{
-    		return false;
-    	}
+    	return Robot.drivetrain.getEncoderOne()-initCount == RobotMap.DRAWBRIDGE_DISTANCE;
     }
 
     // Called once after isFinished returns true

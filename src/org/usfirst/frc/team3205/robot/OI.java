@@ -9,6 +9,7 @@ import org.usfirst.frc.team3205.robot.commands.armToUpperDrawbridge;
 import org.usfirst.frc.team3205.robot.commands.armUp;
 import org.usfirst.frc.team3205.robot.commands.cameraOneInit;
 import org.usfirst.frc.team3205.robot.commands.cameraTwoInit;
+import org.usfirst.frc.team3205.robot.commands.checkPortcullis;
 import org.usfirst.frc.team3205.robot.commands.drawbridgeExtend;
 //import org.usfirst.frc.team3205.robot.commands.cameraOne;
 //import org.usfirst.frc.team3205.robot.commands.cameraTwo;
@@ -30,17 +31,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-//import org.usfirst.frc.team3205.robot.commands.armDown;
-//import org.usfirst.frc.team3205.robot.commands.armToLowerDrawbridge;
-//import org.usfirst.frc.team3205.robot.commands.armToUpperDrawbridge;
-//import org.usfirst.frc.team3205.robot.commands.armUp;
-//import org.usfirst.frc.team3205.robot.commands.drawbridgeGroup;
-//import org.usfirst.frc.team3205.robot.commands.drive;
-//import org.usfirst.frc.team3205.robot.commands.intake;
-//import org.usfirst.frc.team3205.robot.commands.sallyPortGroup;
-//import org.usfirst.frc.team3205.robot.commands.shoot;
-//import org.usfirst.frc.team3205.robot.commands.shooterDown;
-//import org.usfirst.frc.team3205.robot.commands.shooterUp;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -135,6 +126,7 @@ public class OI {
 		c3.whileHeld(new drawbridgeRetract());
 		c5.whileHeld(new shooterUp());
 		c6.whileHeld(new armUp());
+		//c6.whenInactive(new checkPortcullis());
 		c7.whileHeld(new shooterDown());
 		c8.whileHeld(new armDown());
 		c10.whenPressed(new portcullisGroup());

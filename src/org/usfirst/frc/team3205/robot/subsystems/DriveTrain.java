@@ -83,10 +83,13 @@ public class DriveTrain extends Subsystem {
     	robotDrive.tankDrive(0.75, 0.75); 
     }
     
-    public void driveBack(){
-    	robotDrive.tankDrive(-1.0, -1.0);
+    public void driveBackSlow(){
+    	robotDrive.tankDrive(-.5, -.5);
     }
     
+    public void driveSlow(){
+    	robotDrive.tankDrive(.5, .5);
+    }
     public void driveSpeed(double firstSpeed, double secondSpeed){
     	robotDrive.tankDrive(firstSpeed, secondSpeed);
     }

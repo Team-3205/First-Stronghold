@@ -28,6 +28,9 @@ public class armUp extends Command {
     	if(Robot.arm.getEncoder() > 2700){
     		Robot.arm.moveUpSlow();
     	}
+    	if(Robot.arm.isPortcullisLimitSet() && !Robot.arm.isLowerLimitSet()){
+    		Robot.arm.moveDown();
+    	}
     }
  
     // Make this return true when this Command no longer needs to run execute()

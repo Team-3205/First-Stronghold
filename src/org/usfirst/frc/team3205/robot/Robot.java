@@ -154,6 +154,12 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	if(arm.isLowerLimitSet() && !drawbridge.isLowerLimitSet()){
+    		drawbridge.drawBridgeRetract();
+    	}
+    	if(arm.isPortcullisLimitSet() && !arm.isLowerLimitSet()){
+        	arm.moveDown();
+        }
         updateSmartDashboard();
         Scheduler.getInstance().run();
     }
