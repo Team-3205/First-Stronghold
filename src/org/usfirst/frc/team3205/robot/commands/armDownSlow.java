@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class armUp extends Command {
+public class armDownSlow extends Command {
 
-    public armUp() {
+    public armDownSlow() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.arm);
@@ -17,26 +17,19 @@ public class armUp extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.arm.moveUp();
+    	Robot.arm.moveDownSlow();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.arm.isUpperLimitSet()){
+    	if(Robot.arm.isLowerLimitSet()){
     		Robot.arm.stopMoving();
     	}
-    	if(Robot.arm.getEncoder() > 2700){
-    		Robot.arm.moveUpSlow();
-    	}
-//    	if(Robot.arm.isPortcullisLimitSet() && !Robot.arm.isLowerLimitSet()){
-//    		Robot.arm.moveDown();
-//    	}
     }
- 
+
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	//return Robot.arm.isUpperLimitSet();
-    	return false;
+        return false;
     }
 
     // Called once after isFinished returns true

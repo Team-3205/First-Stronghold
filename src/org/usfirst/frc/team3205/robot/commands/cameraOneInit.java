@@ -41,6 +41,7 @@ public class cameraOneInit extends Command {
         	NIVision.IMAQdxStartAcquisition(cameraOne);
         	NIVision.IMAQdxGrab(cameraOne, frame, 1);
         	NIVision.imaqFlip(frame, frame, FlipAxis.HORIZONTAL_AXIS);
+        	NIVision.imaqFlip(frame, frame, FlipAxis.VERTICAL_AXIS);
         	//CameraServer.getInstance().setQuality(50);
         	CameraServer.getInstance().setImage(frame);
 //    	}

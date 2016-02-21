@@ -3,11 +3,11 @@ package org.usfirst.frc.team3205.robot.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
- * Autonomous drawBridge arm attachment 
+ *
  */
-public class drawbridgeGroup extends CommandGroup {
+public class tippyRampGroup extends CommandGroup {
     
-    public  drawbridgeGroup() {
+    public  tippyRampGroup() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -24,16 +24,10 @@ public class drawbridgeGroup extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-  
-    	// Extending and retracting drawBridge arm 
-    	addSequential(new armToUpperDrawbridge());
-    	addSequential(new drawbridgeExtend());
-    	addSequential(new autoDrawbridgeMove());
-    	addParallel(new armToLowerDrawbridge());
-    	addSequential(new autoDrawbridgeDriveBack());
-    	addSequential(new autoDriveBackSlow());
-    	addParallel(new drawbridgeRetract());
-    	addParallel(new armDownSlow());
-    	addSequential(new drivePastStuff()); 
+    	addSequential(new resetArmEncoder());
+    	addSequential(new tippyRaise());
+    	addParallel(new autoMoveToTippy());
+    	addSequential(new armDownSlow());
+    	addSequential(new drivePastStuff());
     }
 }

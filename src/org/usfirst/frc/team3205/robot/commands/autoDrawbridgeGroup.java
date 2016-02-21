@@ -25,11 +25,14 @@ public class autoDrawbridgeGroup extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	addSequential(new autoMove());
-    	addParallel(new armToUpperDrawbridge());
-    	addParallel(new drawbridgeExtend());
-    	addSequential(new autoDrawbridgeDriveBack());  
+    	addSequential(new armToUpperDrawbridge());
+    	addSequential(new drawbridgeExtend());
+    	addSequential(new autoDrawbridgeMove());
     	addParallel(new armToLowerDrawbridge());
-    	addSequential(new drawbridgeRetract()); 
-    	addSequential(new drivePastStuff());
+    	addSequential(new autoDrawbridgeDriveBack());
+    	addSequential(new autoDriveBackSlow());
+    	addParallel(new drawbridgeRetract());
+    	addParallel(new armDownSlow());
+    	addSequential(new drivePastStuff()); 
     }
 }

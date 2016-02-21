@@ -25,7 +25,11 @@ public class portcullisGroup extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	addSequential(new armDown());
+    	addSequential(new autoMove());
+    	addSequential(new moveToPortcullis());
     	addSequential(new portcullisRaise()); 
+    	addSequential(new onPortcullis());		///get closer to portcullis
+    	//addParallel(new portcullisLower());		//move to the lower pos
     	addSequential(new autoDriveOver()); 
     	addSequential(new armDown()); 
     }

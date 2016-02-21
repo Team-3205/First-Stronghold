@@ -30,7 +30,7 @@ public class autoDrawbridgeDriveBack extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return Robot.drivetrain.getEncoderOne()-initCount == RobotMap.DRAWBRIDGE_DISTANCE;
+    	return Robot.drivetrain.getEncoderOne()-initCount == RobotMap.DRAWBRIDGE_BACK;
     }
 
     // Called once after isFinished returns true

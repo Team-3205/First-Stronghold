@@ -19,22 +19,20 @@ public class drivePastStuff extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drivetrain.driveSequential();
-    	initCount = Robot.drivetrain.getEncoderOne();
+    	Robot.drivetrain.driveSlow();
+    //	initCount = Robot.drivetrain.getEncoderOne();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	if(Robot.drivetrain.getEncoderOne() == RobotMap.DISTANCE_PAST_OBSTACLE){
+    		Robot.drivetrain.stop();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if(Robot.drivetrain.getEncoderOne() - initCount == RobotMap.DISTANCE_PAST_OBSTACLE){
-    		return true;
-    	}
-    	else{
-    		return false;
-    	}
+    	return false;
     }
 
     // Called once after isFinished returns true

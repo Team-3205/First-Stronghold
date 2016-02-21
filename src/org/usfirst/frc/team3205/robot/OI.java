@@ -122,8 +122,8 @@ public class OI {
 		//c2.whenPressed(new sallyPortGroup()); 		//is this even going on the robot??
 		c1.whileHeld(new shoot());
 		c2.whileHeld(new intake());
-		c4.whileHeld(new drawbridgeExtend());
-		c3.whileHeld(new drawbridgeRetract());
+		//c4.whileHeld(new drawbridgeExtend());
+		//c3.whileHeld(new drawbridgeRetract());
 		c5.whileHeld(new shooterUp());
 		c6.whileHeld(new armUp());
 		//c6.whenInactive(new checkPortcullis());

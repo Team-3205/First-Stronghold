@@ -15,10 +15,13 @@ import org.usfirst.frc.team3205.robot.commands.autoDrawbridgeGroup;
 import org.usfirst.frc.team3205.robot.commands.autoDriveOver;
 import org.usfirst.frc.team3205.robot.commands.autoPortcullisGroup;
 import org.usfirst.frc.team3205.robot.commands.autoSallyPort;
+import org.usfirst.frc.team3205.robot.commands.drivePastStuff;
+import org.usfirst.frc.team3205.robot.commands.nothing;
 //import org.usfirst.frc.team3205.robot.commands.cameraOne;
 import org.usfirst.frc.team3205.robot.commands.resetArmEncoder;
 import org.usfirst.frc.team3205.robot.commands.resetDriveTrainEncoders;
 import org.usfirst.frc.team3205.robot.commands.shooterDown;
+import org.usfirst.frc.team3205.robot.commands.tippyRampGroup;
 import org.usfirst.frc.team3205.robot.subsystems.Arm;
 import org.usfirst.frc.team3205.robot.subsystems.Drawbridge;
 import org.usfirst.frc.team3205.robot.subsystems.DriveTrain;
@@ -63,8 +66,11 @@ public class Robot extends IterativeRobot {
 	        chooser.addObject("Auto Drawbridge", new autoDrawbridgeGroup());
 	        chooser.addObject("Auto Portcullis", new autoPortcullisGroup());
 	        chooser.addObject("Auto Sally Port", new autoSallyPort());
-	        chooser.addObject("Drive", new autoDriveOver());
+	        chooser.addObject("Tippy Ramp", new tippyRampGroup());
+	        chooser.addObject("Drive", new drivePastStuff());
+	        chooser.addObject("Nothing", new nothing());
 	        SmartDashboard.putData("Auto mode", chooser);
+	        SmartDashboard.putNumber("Arm Encoder", Robot.arm.getEncoder());
 	        SmartDashboard.putData("Reset arm Encoder", new resetArmEncoder());
 	        SmartDashboard.putData("Reset DriveTrain Encoders", new resetDriveTrainEncoders());
 	        updateSmartDashboard();
@@ -97,8 +103,8 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
+    	arm.resetEncoder();
         autonomousCommand = (Command) chooser.getSelected();
-       
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
 		case "My Auto":
@@ -118,6 +124,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
+    	SmartDashboard.putNumber("Auto Arm Encoder", arm.getEncoder());
         Scheduler.getInstance().run();
     }
 
@@ -154,12 +161,13 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-    	if(arm.isLowerLimitSet() && !drawbridge.isLowerLimitSet()){
-    		drawbridge.drawBridgeRetract();
-    	}
-    	if(arm.isPortcullisLimitSet() && !arm.isLowerLimitSet()){
-        	arm.moveDown();
-        }
+    	SmartDashboard.putNumber("Drawbridge Counter from Teleop", drawbridge.get());
+//    	if(arm.isLowerLimitSet() && !drawbridge.isLowerLimitSet()){
+//    		drawbridge.drawBridgeRetract();
+//    	}
+//    	if(arm.isPortcullisLimitSet() && !arm.isLowerLimitSet()){
+//        	arm.moveDown();
+//        }
         updateSmartDashboard();
         Scheduler.getInstance().run();
     }

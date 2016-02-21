@@ -59,6 +59,9 @@ public class Arm extends Subsystem {
     	armMover.set(.25);
     }
     
+    public void moveDownSlow(){
+    	armMover.set(.25);
+    }
     public void resetEncoder(){
     	armEncoder.reset();
     }
@@ -66,7 +69,7 @@ public class Arm extends Subsystem {
     public int getEncoder(){
     	return armEncoder.getRaw();
     }
-    
+
     public boolean isPortcullisLimitSet(){
     	return armPortcullis.get();
     }

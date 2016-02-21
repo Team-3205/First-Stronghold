@@ -27,21 +27,26 @@ public class RobotMap {
 
 	
 	//Arm Positions
-	public static final int ARM_DRAWBRIDGE_UPPER_POSITION = 2100;
+	public static final int ARM_DRAWBRIDGE_UPPER_POSITION = 1900;
 //	public static final int ARM_SALLY_PORT_POSITION = 0;
-	public static final int ARM_DRAWBRIDGE_LOWER_POSITION = 0;
+	public static final int ARM_DRAWBRIDGE_LOWER_POSITION = 1270;
 	public static final int TALL_SALLY = 0; 
 	public static final int SHORT_SALLY = 0;
-	public static final int PORTCULLIS_POS = 0; 
+	public static final int TIPPY_RAMP_POS = 1300;
+	public static final int PORTCULLIS_POS = 600;
+	public static final int PORTCULLIS_LOWER_POS = 430;
 	
 	//Distances
-	public static final int DISTANCE_PAST_OBSTACLE = 0;
-	public static final int DRAWBRIDGE_DISTANCE = 0;
-	public static final int AUTO_DISTANCE_TO_OBSTACLES = 0;
+	public static final int DISTANCE_PAST_OBSTACLE = 10000;
+	public static final int DRAWBRIDGE_DISTANCE = 1700;
+	public static final int AUTO_DISTANCE_TO_OBSTACLES = 12500;
 	public static final int AUTO_DISTANCE_OVER_EVERYTHING = 0;
 	public static final int SALLYPORT_DISTANCE = 0; 
-	public static final int PORTCULLIS_DISTANCE = 0; 
+	public static final int PORTCULLIS_DISTANCE = 3000; 
 	public static final int DRAWBRAGE_AFTER_EXTEND = 0;
+	public static final int DRAWBRIDGE_BACK = 1100;
+	public static final int DRAWBRIDGE_ALL_BACK = 0;
+	public static final int TIPPY_RAMP = 14000;
 	
 	//MOTORS
 	public static final int DRIVE_TOP_LEFT = 2;				

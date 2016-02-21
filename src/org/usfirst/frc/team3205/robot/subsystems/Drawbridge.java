@@ -47,6 +47,9 @@ public class Drawbridge extends Subsystem {
     	return counter.getDistance();
     }
     
+    public int get(){
+    	return counter.get();
+    }
     public boolean isUpperLimitSet() {
     	return drawbridgeUpperLimit.get();
     }

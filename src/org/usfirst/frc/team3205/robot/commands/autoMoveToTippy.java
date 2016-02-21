@@ -1,52 +1,46 @@
 package org.usfirst.frc.team3205.robot.commands;
 
 import org.usfirst.frc.team3205.robot.Robot;
+import org.usfirst.frc.team3205.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class armUp extends Command {
+public class autoMoveToTippy extends Command {
 
-    public armUp() {
+    public autoMoveToTippy() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.arm);
+    	requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.arm.moveUp();
+    	Robot.drivetrain.driveSlow();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.arm.isUpperLimitSet()){
-    		Robot.arm.stopMoving();
+    	if(Robot.drivetrain.getEncoderOne() == RobotMap.TIPPY_RAMP){
+    		Robot.drivetrain.stop();
     	}
-    	if(Robot.arm.getEncoder() > 2700){
-    		Robot.arm.moveUpSlow();
-    	}
-//    	if(Robot.arm.isPortcullisLimitSet() && !Robot.arm.isLowerLimitSet()){
-//    		Robot.arm.moveDown();
-//    	}
     }
- 
+
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	//return Robot.arm.isUpperLimitSet();
-    	return false;
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.arm.stopMoving();
+    	Robot.drivetrain.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.arm.stopMoving();
+    	Robot.drivetrain.stop();
     }
 }

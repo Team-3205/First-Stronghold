@@ -76,7 +76,7 @@ public class Shooter extends Subsystem {
     	return shooterUpperLimit.get();
     }
     
-    public boolean isLowerLimitSet(){
+    public boolean isLowerLimitSet(){				
     	return shooterLowerLimit.get();
     }
     
