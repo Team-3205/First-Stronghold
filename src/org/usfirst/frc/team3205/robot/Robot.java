@@ -2,6 +2,7 @@
 package org.usfirst.frc.team3205.robot;
 
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick.RumbleType;
 import edu.wpi.first.wpilibj.command.Command;
@@ -51,33 +52,31 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static final DriveTrain drivetrain = new DriveTrain();
 	public static final Shooter shootey = new Shooter();
-	public static final Arm arm = new Arm();
+	public static Arm arm;
 	public static final Drawbridge drawbridge = new Drawbridge();
 	public static final Vision vision = new Vision();
+	public static Encoder armEncoder;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-    	try{
-			oi = new OI();
-	        chooser = new SendableChooser();
-	        chooser.addObject("Auto Drawbridge", new autoDrawbridgeGroup());
-	        chooser.addObject("Auto Portcullis", new autoPortcullisGroup());
-	        chooser.addObject("Auto Sally Port", new autoSallyPort());
-	        chooser.addObject("Tippy Ramp", new tippyRampGroup());
-	        chooser.addObject("Drive", new drivePastStuff());
-	        chooser.addObject("Nothing", new nothing());
-	        SmartDashboard.putData("Auto mode", chooser);
-	        SmartDashboard.putNumber("Arm Encoder", Robot.arm.getEncoder());
-	        SmartDashboard.putData("Reset arm Encoder", new resetArmEncoder());
-	        SmartDashboard.putData("Reset DriveTrain Encoders", new resetDriveTrainEncoders());
-	        updateSmartDashboard();
-    	}
-    	catch(Exception e){
-    		
-    	}
+    	arm = new Arm();	
+		oi = new OI();
+        chooser = new SendableChooser();
+        chooser.addObject("Auto Drawbridge", new autoDrawbridgeGroup());
+        chooser.addObject("Auto Portcullis", new autoPortcullisGroup());
+        chooser.addObject("Auto Sally Port", new autoSallyPort());
+        chooser.addObject("Tippy Ramp", new tippyRampGroup());
+        chooser.addObject("Drive", new drivePastStuff());
+        chooser.addObject("Nothing", new nothing());
+        armEncoder = new Encoder(4,5, false, Encoder.EncodingType.k4X);
+        SmartDashboard.putData("Auto mode", chooser);
+        SmartDashboard.putNumber("Arm Encoder", Robot.arm.getEncoder());
+        SmartDashboard.putData("Reset arm Encoder", new resetArmEncoder());
+        SmartDashboard.putData("Reset DriveTrain Encoders", new resetDriveTrainEncoders());
+        updateSmartDashboard();
     }
 	
 	/**
@@ -103,7 +102,8 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
-    	arm.resetEncoder();
+    	armEncoder.reset();
+    	updateSmartDashboard();
         autonomousCommand = (Command) chooser.getSelected();
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
@@ -124,7 +124,9 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    	SmartDashboard.putNumber("Auto Arm Encoder", arm.getEncoder());
+      	SmartDashboard.putNumber("Arm Encoder in Auto", armEncoder.getRaw());
+    	updateSmartDashboard();
+    	//SmartDashboard.putNumber("Auto Arm Encoder", arm.getEncoder());
         Scheduler.getInstance().run();
     }
 

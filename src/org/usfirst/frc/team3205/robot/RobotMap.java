@@ -21,7 +21,7 @@ public class RobotMap {
 	public static final double SHOOTER_DOWN = .4;
 	public static final double FLEX = 1.0;
 	public static final double ARM_DOWN = .5;
-	public static final double DRAWBRIDGE_SPEED = 1.0; 
+	public static final double DRAWBRIDGE_SPEED = .75;
 	public static final double INTAKE_SPEED = 0.5;
 	public static final double SPIT_SPEED = 1.0;
 

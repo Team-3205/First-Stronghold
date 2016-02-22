@@ -18,12 +18,13 @@ public class tippyRaise extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.arm.moveUp();
+    	//Robot.arm.moveUp();			
+    	Robot.arm.moveUpSlow();				//slow for checking
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.arm.getEncoder() == RobotMap.TIPPY_RAMP_POS){
+    	if(Robot.arm.getEncoder() == RobotMap.TIPPY_RAMP_POS || Robot.arm.isUpperLimitSet()){
     		Robot.arm.stopMoving();
     	}
     }

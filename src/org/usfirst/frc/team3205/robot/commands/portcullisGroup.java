@@ -28,9 +28,9 @@ public class portcullisGroup extends CommandGroup {
     	addSequential(new autoMove());
     	addSequential(new moveToPortcullis());
     	addSequential(new portcullisRaise()); 
-    	addSequential(new onPortcullis());		///get closer to portcullis
+    	//addSequential(new onPortcullis());		///get closer to portcullis
     	//addParallel(new portcullisLower());		//move to the lower pos
     	addSequential(new autoDriveOver()); 
-    	addSequential(new armDown()); 
+    	//addSequential(new armDown()); 
     }
 }

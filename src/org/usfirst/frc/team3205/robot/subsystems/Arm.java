@@ -1,6 +1,8 @@
 package org.usfirst.frc.team3205.robot.subsystems;
 
+import org.usfirst.frc.team3205.robot.Robot;
 import org.usfirst.frc.team3205.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -15,14 +17,14 @@ public class Arm extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-	Encoder armEncoder;
+	//Encoder armEncoder;
 	private DigitalInput armUpperLimit;
 	private DigitalInput armLowerLimit;
 	private DigitalInput armPortcullis;
 	private SpeedController armMover;
 	
 	public Arm(){
-		armEncoder = new Encoder(4,5, false, Encoder.EncodingType.k4X);
+//		armEncoder = new Encoder(4,5, false, Encoder.EncodingType.k4X);
 		armUpperLimit = new DigitalInput(RobotMap.ARM_UPPER_LIMIT);
 		armLowerLimit = new DigitalInput(RobotMap.ARM_LOWER_LIMIT);
 		armPortcullis = new DigitalInput(RobotMap.ARM_PORTCULLIS_LIMIT);
@@ -63,11 +65,11 @@ public class Arm extends Subsystem {
     	armMover.set(.25);
     }
     public void resetEncoder(){
-    	armEncoder.reset();
+    	Robot.armEncoder.reset();
     }
     
     public int getEncoder(){
-    	return armEncoder.getRaw();
+    	return Robot.armEncoder.getRaw();
     }
 
     public boolean isPortcullisLimitSet(){
