@@ -23,15 +23,15 @@ public class Drawbridge extends Subsystem {
 	private SpeedController drawbridgeMotor;
 	private DigitalInput drawbridgeUpperLimit;
 	private DigitalInput drawbridgeLowerLimit;
-	Encoder dbEncoder;
 	Counter counter; 
 	
 	public Drawbridge() {
 		drawbridgeMotor = new Talon(RobotMap.DRAWBRIDGE_MOTOR);
 		drawbridgeUpperLimit = new DigitalInput(RobotMap.DRAWBRIDGE_UPPER_LIMIT);
 		drawbridgeLowerLimit = new DigitalInput(RobotMap.DRAWBRIDGE_LOWER_LIMIT);
-		//dbEncoder = new Encoder(8, false, Encoder.EncodingType.k4X); // might change to k1 - weird?? 
-		counter = new Counter(8); // possible coding for Chris's encoder based on the signals 
+		counter = new Counter();
+		counter.setUpSource(8);
+		counter.setUpDownCounterMode();
 	}
 	
     public void initDefaultCommand() {

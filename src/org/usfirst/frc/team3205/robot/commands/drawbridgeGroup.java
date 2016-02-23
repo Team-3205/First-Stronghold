@@ -26,14 +26,15 @@ public class drawbridgeGroup extends CommandGroup {
         // arm.
   
     	// Extending and retracting drawBridge arm 
-    	addSequential(new armToUpperDrawbridge());
-    	addSequential(new drawbridgeExtend());
-    	addSequential(new autoDrawbridgeMove());
-    	addParallel(new armToLowerDrawbridge());
+//    	addSequential(new armToUpperDrawbridge());
+//    	addSequential(new drawbridgeExtend());
+//    	addSequential(new autoDrawbridgeMove());
+    	addSequential(new armToLowerDrawbridge());
     	addSequential(new autoDrawbridgeDriveBack());
-    	addSequential(new autoDriveBackSlow());
-    	addParallel(new drawbridgeRetract());
+    	addSequential(new drawbridgeSmallRetract());
+    	addSequential(new autoDriveBackSlowFromDrawbridge());
     	addParallel(new armDownSlow());
+    	addParallel(new drawbridgeRetract());
     	addSequential(new drivePastStuff()); 
     }
 }

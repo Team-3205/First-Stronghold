@@ -45,8 +45,10 @@ public class RobotMap {
 	public static final int PORTCULLIS_DISTANCE = 3000; 
 	public static final int DRAWBRAGE_AFTER_EXTEND = 0;
 	public static final int DRAWBRIDGE_BACK = 1100;
+	public static final int DRAWBRIDGE_SMALL_BACK = 550;
 	public static final int DRAWBRIDGE_ALL_BACK = 0;
 	public static final int TIPPY_RAMP = 14000;
+	public static final int DRAWBRIDGE_SMALL = 0;
 	
 	//MOTORS
 	public static final int DRIVE_TOP_LEFT = 2;				
