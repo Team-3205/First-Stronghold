@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class armToLowerDrawbridge extends Command {
 
 	private int initCount;
+	private long start;
     public armToLowerDrawbridge() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -32,8 +33,8 @@ public class armToLowerDrawbridge extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	//return false;
-    	return Robot.arm.getEncoder()  == RobotMap.ARM_DRAWBRIDGE_LOWER_POSITION;
+    	return false;
+    	
     }
 
     // Called once after isFinished returns true

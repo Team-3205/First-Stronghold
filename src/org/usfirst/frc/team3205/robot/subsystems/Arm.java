@@ -68,8 +68,8 @@ public class Arm extends Subsystem {
     	armEncoder.reset();
     }
     
-    public int getEncoder(){
-    	return armEncoder.getRaw();
+    public double getEncoder(){
+    	return armEncoder.getDistance();
     }
 
 //    public boolean isPortcullisLimitSet(){

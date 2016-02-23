@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class autoDriveBackSlowFromDrawbridge extends Command {
 
+	long start;
 	private int initCount;
     public autoDriveBackSlowFromDrawbridge() {
         // Use requires() here to declare subsystem dependencies
@@ -19,13 +20,14 @@ public class autoDriveBackSlowFromDrawbridge extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	initCount = Robot.drivetrain.getEncoderOne();
+    	start = System.currentTimeMillis();
+    	//initCount = Robot.drivetrain.getEncoderOne();
     	Robot.drivetrain.driveBackSlow();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.drivetrain.getEncoderOne() - initCount == RobotMap.DRAWBRIDGE_BACK){
+    	if(System.currentTimeMillis() - start == 200){
     		Robot.drivetrain.stop();
     	}
     }
