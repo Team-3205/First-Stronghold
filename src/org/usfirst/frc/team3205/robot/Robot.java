@@ -55,7 +55,6 @@ public class Robot extends IterativeRobot {
 	public static Arm arm;
 	public static final Drawbridge drawbridge = new Drawbridge();
 	public static final Vision vision = new Vision();
-	public static Encoder armEncoder;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -71,7 +70,6 @@ public class Robot extends IterativeRobot {
         chooser.addObject("Tippy Ramp", new tippyRampGroup());
         chooser.addObject("Drive", new drivePastStuff());
         chooser.addObject("Nothing", new nothing());
-        armEncoder = new Encoder(4,5, false, Encoder.EncodingType.k4X);
         SmartDashboard.putData("Auto mode", chooser);
         SmartDashboard.putNumber("Arm Encoder", Robot.arm.getEncoder());
         SmartDashboard.putData("Reset arm Encoder", new resetArmEncoder());
@@ -102,7 +100,6 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
-    	armEncoder.reset();
     	updateSmartDashboard();
         autonomousCommand = (Command) chooser.getSelected();
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
@@ -124,7 +121,6 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-      	SmartDashboard.putNumber("Arm Encoder in Auto", armEncoder.getRaw());
     	updateSmartDashboard();
     	//SmartDashboard.putNumber("Auto Arm Encoder", arm.getEncoder());
         Scheduler.getInstance().run();
@@ -167,9 +163,9 @@ public class Robot extends IterativeRobot {
 //    	if(arm.isLowerLimitSet() && !drawbridge.isLowerLimitSet()){
 //    		drawbridge.drawBridgeRetract();
 //    	}
-    	if(arm.isPortcullisLimitSet() && !arm.isLowerLimitSet()){
-        	arm.moveDown();
-        }
+//    	if(arm.isPortcullisLimitSet() && !arm.isLowerLimitSet()){
+//        	arm.moveDown();
+//        }
         updateSmartDashboard();
         Scheduler.getInstance().run();
     }

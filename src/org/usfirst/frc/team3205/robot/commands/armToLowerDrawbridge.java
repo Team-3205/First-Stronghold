@@ -25,15 +25,15 @@ public class armToLowerDrawbridge extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.arm.isLowerLimitSet()){
+    	if(Robot.arm.getEncoder() <= RobotMap.DRAWBRIDGE_LOWER_LIMIT || Robot.arm.isLowerLimitSet()){
     		Robot.arm.stopMoving();
     	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return RobotMap.ARM_DRAWBRIDGE_LOWER_POSITION == Robot.arm.getEncoder();
-    	//return Robot.arm.getEncoder() - initCount == RobotMap.ARM_DRAWBRIDGE_LOWER_POSITION;
+    	//return false;
+    	return Robot.arm.getEncoder()  == RobotMap.ARM_DRAWBRIDGE_LOWER_POSITION;
     }
 
     // Called once after isFinished returns true

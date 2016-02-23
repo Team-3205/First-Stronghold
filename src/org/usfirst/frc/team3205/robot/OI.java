@@ -7,6 +7,7 @@ import org.usfirst.frc.team3205.robot.commands.armDown;
 import org.usfirst.frc.team3205.robot.commands.armToLowerDrawbridge;
 import org.usfirst.frc.team3205.robot.commands.armToUpperDrawbridge;
 import org.usfirst.frc.team3205.robot.commands.armUp;
+import org.usfirst.frc.team3205.robot.commands.autoDriveBackSlow;
 import org.usfirst.frc.team3205.robot.commands.cameraOneInit;
 import org.usfirst.frc.team3205.robot.commands.cameraTwoInit;
 import org.usfirst.frc.team3205.robot.commands.checkPortcullis;
@@ -129,7 +130,7 @@ public class OI {
 		//c6.whenInactive(new checkPortcullis());
 		c7.whileHeld(new shooterDown());
 		c8.whileHeld(new armDown());
-		c10.whenPressed(new portcullisGroup());
+		c10.whenPressed(new autoDriveBackSlow());
 		c11.toggleWhenPressed(new cameraOneInit());
 		c12.toggleWhenPressed(new cameraTwoInit());
 		

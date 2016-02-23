@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class drawbridgeSmallRetract extends Command {
 
+	long startTime;
     public drawbridgeSmallRetract() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -19,11 +20,12 @@ public class drawbridgeSmallRetract extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.drawbridge.drawBridgeRetract();
+    	startTime = System.currentTimeMillis();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.drawbridge.isLowerLimitSet() || Robot.drawbridge.getDistance() == RobotMap.DRAWBRIDGE_SMALL){
+    	if(System.currentTimeMillis() - startTime == RobotMap.DRAWBRIDGE_SMALL_RETRACT){
     		Robot.drawbridge.stop();
     	}
     }

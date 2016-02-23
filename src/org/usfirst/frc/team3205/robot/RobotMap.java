@@ -21,7 +21,7 @@ public class RobotMap {
 	public static final double SHOOTER_DOWN = .4;
 	public static final double FLEX = 1.0;
 	public static final double ARM_DOWN = .5;
-	public static final double DRAWBRIDGE_SPEED = .75;
+	public static final double DRAWBRIDGE_SPEED = .6;
 	public static final double INTAKE_SPEED = 0.5;
 	public static final double SPIT_SPEED = 1.0;
 
@@ -30,6 +30,7 @@ public class RobotMap {
 	public static final int ARM_DRAWBRIDGE_UPPER_POSITION = 1900;
 //	public static final int ARM_SALLY_PORT_POSITION = 0;
 	public static final int ARM_DRAWBRIDGE_LOWER_POSITION = 1270;
+	public static final int ARM_DRAWBRIDGE_LOWERING = 1000;
 	public static final int TALL_SALLY = 0; 
 	public static final int SHORT_SALLY = 0;
 	public static final int TIPPY_RAMP_POS = 1300;
@@ -45,7 +46,7 @@ public class RobotMap {
 	public static final int PORTCULLIS_DISTANCE = 3000; 
 	public static final int DRAWBRAGE_AFTER_EXTEND = 0;
 	public static final int DRAWBRIDGE_BACK = 1100;
-	public static final int DRAWBRIDGE_SMALL_BACK = 550;
+	public static final int DRAWBRIDGE_SMALL_BACK = 300;
 	public static final int DRAWBRIDGE_ALL_BACK = 0;
 	public static final int TIPPY_RAMP = 14000;
 	public static final int DRAWBRIDGE_SMALL = 0;
@@ -77,4 +78,7 @@ public class RobotMap {
 	public static boolean camTwoStart = true;
 	public static boolean alwaysUp = false; //use only as a last resort
 	public static final int WAIT_TIME = 350;
+	
+	//Times
+	public static final long DRAWBRIDGE_SMALL_RETRACT = 400;
 }

@@ -1,15 +1,16 @@
 package org.usfirst.frc.team3205.robot.commands;
 
 import org.usfirst.frc.team3205.robot.Robot;
+import org.usfirst.frc.team3205.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class checkPortcullis extends Command {
+public class armDrawbridgeDown extends Command {
 
-    public checkPortcullis() {
+    public armDrawbridgeDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.arm);
@@ -17,13 +18,14 @@ public class checkPortcullis extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.arm.moveDownSlow();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-//    	if(Robot.arm.isPortcullisLimitSet() && !Robot.arm.isLowerLimitSet()){
-//    		Robot.arm.moveDown();
-//    	}
+    	if(Robot.arm.getEncoder() == RobotMap.ARM_DRAWBRIDGE_LOWERING){
+    		Robot.arm.stopMoving();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

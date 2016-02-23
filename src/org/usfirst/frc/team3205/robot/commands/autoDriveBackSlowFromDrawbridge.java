@@ -19,13 +19,13 @@ public class autoDriveBackSlowFromDrawbridge extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drivetrain.driveBackSlow();
     	initCount = Robot.drivetrain.getEncoderOne();
+    	Robot.drivetrain.driveBackSlow();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.drivetrain.getEncoderOne() == RobotMap.DRAWBRIDGE_SMALL_BACK){
+    	if(Robot.drivetrain.getEncoderOne() - initCount == RobotMap.DRAWBRIDGE_BACK){
     		Robot.drivetrain.stop();
     	}
     }
