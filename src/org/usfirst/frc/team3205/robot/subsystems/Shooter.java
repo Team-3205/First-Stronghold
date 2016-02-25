@@ -42,8 +42,8 @@ public class Shooter extends Subsystem {
     	moveEncoder.reset();
     }
     
-    public int getEncoder(){
-    	return moveEncoder.getRaw();
+    public double getEncoder(){
+    	return moveEncoder.getDistance();
     }
     
     public void shoot(){

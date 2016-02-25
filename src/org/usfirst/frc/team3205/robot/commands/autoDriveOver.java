@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class autoDriveOver extends Command {
 
-	private int initCount;
+	private double initCount;
     public autoDriveOver() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

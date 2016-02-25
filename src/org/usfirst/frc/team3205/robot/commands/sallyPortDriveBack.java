@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class sallyPortDriveBack extends Command {
 
-	private int initCount; 
+	private double initCount; 
 	
     public sallyPortDriveBack() {
         // Use requires() here to declare subsystem dependencies

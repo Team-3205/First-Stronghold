@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class autoMove extends Command {
 
-	private int initCount;
+	private double initCount;
     public autoMove() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
