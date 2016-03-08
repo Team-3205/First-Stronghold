@@ -68,7 +68,7 @@ public class Robot extends IterativeRobot {
         chooser.addObject("Auto Portcullis", new autoPortcullisGroup());
         chooser.addObject("Auto Sally Port", new autoSallyPort());
         chooser.addObject("Tippy Ramp", new tippyRampGroup());
-        chooser.addObject("Drive", new drivePastStuff());
+        chooser.addObject("Lowbar Drive", new drivePastStuff());
         chooser.addObject("Nothing", new nothing());
         SmartDashboard.putData("Auto mode", chooser);
         SmartDashboard.putNumber("Arm Encoder", Robot.arm.getEncoder());

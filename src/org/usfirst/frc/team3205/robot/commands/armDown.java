@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3205.robot.commands;
 
 import org.usfirst.frc.team3205.robot.Robot;
+import org.usfirst.frc.team3205.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -13,6 +14,7 @@ public class armDown extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.arm);
+    	requires(Robot.drawbridge);
     }
 
     // Called just before this Command runs the first time
@@ -25,6 +27,9 @@ public class armDown extends Command {
     	if(Robot.arm.isLowerLimitSet()){
     		Robot.arm.resetEncoder();
     		Robot.arm.stopMoving();
+    	}
+    	if(RobotMap.STOP_DRAWBRIDGE >= Robot.arm.getEncoder()){
+    		Robot.drawbridge.drawBridgeRetract();
     	}
     }
 

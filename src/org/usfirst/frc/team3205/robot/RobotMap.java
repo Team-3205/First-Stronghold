@@ -36,6 +36,7 @@ public class RobotMap {
 	public static final int TIPPY_RAMP_POS = 1300;
 	public static final int PORTCULLIS_POS = 600;
 	public static final int PORTCULLIS_LOWER_POS = 430;
+	public static final int STOP_DRAWBRIDGE = 0;
 	
 	//Distances
 	public static final int DISTANCE_PAST_OBSTACLE = 10000;

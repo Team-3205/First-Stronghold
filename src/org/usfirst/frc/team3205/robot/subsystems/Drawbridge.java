@@ -39,9 +39,6 @@ public class Drawbridge extends Subsystem {
        // setDefaultCommand(new drawbridgeRetract());
     }
     
-    public double getPeriod(){
-    	return counter.getPeriod(); 
-    }
     
     public double getDistance(){
     	return counter.getDistance();
@@ -73,7 +70,6 @@ public class Drawbridge extends Subsystem {
     public void updateDashboard() {
     	SmartDashboard.putBoolean("Drawbridge Upper Limit", isUpperLimitSet());
     	SmartDashboard.putBoolean("Drawbridge Lower Limit", isLowerLimitSet());
-    	SmartDashboard.putNumber("Drabridge Period", getPeriod());
     	SmartDashboard.putNumber("Drawbridge Distance", getDistance());
     }
 }
