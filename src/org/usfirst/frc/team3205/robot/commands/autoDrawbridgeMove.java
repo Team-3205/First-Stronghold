@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class autoDrawbridgeMove extends Command {
 	
-	private int initCount;
+	private double initCount;
 
     public autoDrawbridgeMove() {
         // Use requires() here to declare subsystem dependencies

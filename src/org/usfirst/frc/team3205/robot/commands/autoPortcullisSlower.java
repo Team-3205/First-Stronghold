@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class autoPortcullisSlower extends Command {
 
-	private int initChange;
+	private double initChange;
     public autoPortcullisSlower() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

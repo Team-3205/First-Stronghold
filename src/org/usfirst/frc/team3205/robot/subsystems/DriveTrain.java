@@ -71,12 +71,12 @@ public class DriveTrain extends Subsystem {
     	two.reset();
     }
     
-    public int getEncoderOne(){
-    	return one.getRaw();
+    public double getEncoderOne(){
+    	return one.getDistance();
     }
    
-    public int getEncoderTwo(){
-    	return two.getRaw();
+    public double getEncoderTwo(){
+    	return two.getDistance();
     }
     
     public void driveSequential(){
